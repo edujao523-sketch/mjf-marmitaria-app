@@ -1,0 +1,51 @@
+name: Gerar APK MJF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Preparar Android
+        uses: android-actions/setup-android@v3
+
+      - name: Extrair projeto
+        run: |
+          unzip -q MJF_Marmitaria_Projeto_com_Gerador_APK.zip -d projeto
+          cp -R projeto/. .
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar aplicativo Android
+        run: npx cap add android
+
+      - name: Sincronizar
+        run: npx cap sync android
+
+      - name: Compilar APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Disponibilizar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MJF-Marmitaria-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
