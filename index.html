@@ -41,7 +41,61 @@ input,select,textarea{width:100%;padding:12px;border:1px solid #d3cbbb;border-ra
 footer{border-top:1px solid #35342e;padding:30px 22px;text-align:center;color:#928d82;font-size:12px;line-height:1.9}.footbrand{color:var(--gold);font-weight:800;letter-spacing:3px;font-size:16px}
 .hidden{display:none!important}.admin-wrap{max-width:720px;margin:30px auto;padding:0 16px}.admin-panel{background:#1c1c18;border:1px solid #51452d;border-radius:14px;padding:24px;margin:15px 0}.admin-panel h2{font:700 24px 'Playfair Display';color:var(--gold2)}.admin-panel label{display:block;margin:12px 0 5px;color:#d7c9a9;font-size:12px}.admin-panel input,.admin-panel textarea{background:#10100e;border-color:#494438;color:white}.admin-panel .formgrid{grid-template-columns:1fr 1fr}.admin-note{font-size:12px;color:#aaa;line-height:1.6}.admin-link{display:block;text-align:center;margin:20px;color:#aaa;font-size:12px}
 @media(max-width:760px){.head{padding:12px 16px}nav{gap:12px}nav a:not(.navbtn){display:none}.hero{padding:42px 17px;grid-template-columns:1fr;gap:25px}.hero-photo{height:270px;grid-row:1}.hero-copy{grid-row:2}.strip-inner{padding:16px 10px;gap:7px}.strip-item{font-size:10px;flex-direction:column;text-align:center;gap:4px}.strip-item b{font-size:18px}section.content{padding:48px 16px}.menu-layout{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.address{align-items:flex-start;flex-direction:column}.brandname{font-size:13px}}
-</style></head>
+
+/* VISUAL REFRESH: stronger colors, food-first hero and bolder sections */
+:root{--gold:#ffc247;--gold2:#ffe09a;--ink:#17130f;--panel:#241b14;--muted:#c4b7a5;--line:#4a3827;--cream:#fff8ed}
+body{background:#17130f}
+.topline{height:7px;background:linear-gradient(90deg,#f47a20,#ffc247,#f04b25,#ffc247)}
+header{background:#17130ff2;border-bottom:1px solid #68421f}
+.monogram{background:#ffc247;color:#24160b;border:0;border-radius:13px;font-size:15px;box-shadow:0 6px 20px #ffb52c44}
+.brandname{letter-spacing:2.5px}
+.navbtn,.btn{border-radius:999px;padding:13px 21px;font-size:13px;font-weight:800;transition:.2s;box-shadow:0 5px 16px #0002}
+.btn.gold,.navbtn{background:linear-gradient(135deg,#ffd66d,#ff9e28);color:#251609;border:0}
+.btn.gold:hover,.navbtn:hover{transform:translateY(-2px);background:#ffe49b}
+.hero{max-width:none;padding:78px max(22px,calc((100vw - 1120px)/2)) 72px;grid-template-columns:1fr 1fr;gap:55px;background:radial-gradient(ellipse at 12% 20%,#633415 0,transparent 42%),linear-gradient(115deg,#24170f,#100e0b 70%);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:460px;height:460px;border:1px solid #ffbd4b22;border-radius:50%;left:-210px;bottom:-300px;box-shadow:0 0 0 35px #ffbd4b0b,0 0 0 75px #ffbd4b08}
+.hero-copy{position:relative;z-index:1}
+.eyebrow{color:#ffc247;font-size:12px;letter-spacing:3.5px}
+h1{font:800 clamp(45px,6vw,76px)/1.02 'Playfair Display',serif;letter-spacing:-1.5px;margin:20px 0}
+h1 span{color:#ffc247;text-shadow:0 4px 25px #ff9e2833}
+.hero p{font-size:17px;max-width:500px;color:#e1d1bd}
+.hero-photo{height:440px;border-radius:28px;border:5px solid #fff2d51c;box-shadow:0 25px 80px #0009;transform:rotate(1.5deg)}
+.hero-photo img{opacity:.94;filter:saturate(1.15) contrast(1.05)}
+.photo-tag{background:#ffc247;color:#27180a;border:0;border-radius:999px;font-weight:900;padding:13px 19px;box-shadow:0 8px 25px #0006}
+.strip{background:#ffc247;border:0;color:#241609}
+.strip-inner{padding:20px 22px}
+.strip-item{color:#241609;font-weight:800}.strip-item b{color:#6a310e;background:#fff2d3;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:14px}
+section.content{padding-top:82px;padding-bottom:82px}
+.section-head h2{font-size:clamp(34px,4vw,46px);color:#fff}
+.section-head p{font-size:15px;color:#c8bba9}
+.menu-layout{gap:25px}
+.menu-card{background:linear-gradient(145deg,#3b2616,#21160f);border:1px solid #9b642b;border-radius:22px;padding:34px;box-shadow:0 18px 45px #0005;position:relative;overflow:hidden}
+.menu-card:after{content:"MJF";position:absolute;right:-4px;bottom:-42px;font:800 120px 'Playfair Display';color:#fff08;pointer-events:none}
+.menu-label{background:#ffc247;color:#291707;border-radius:999px;padding:9px 14px}
+.menu-card h3{font-size:34px;line-height:1.15;color:#fff}
+.menu-card p{font-size:15px;color:#e0cdb7}
+.pricebox{background:#17110d;border:1px solid #8a5c2e;border-radius:14px;padding:18px}
+.pricebox span{color:#ddc5a5;font-weight:700}.pricebox strong{font-size:30px;color:#ffc247}
+.order-card{border-radius:22px;padding:30px;box-shadow:0 18px 45px #0005;background:#fff7e9}
+.order-card h3{font-size:30px;color:#28190e}
+.order-card .btn{font-size:14px;padding:16px}
+.order-card input,.order-card select,.order-card textarea{border-radius:10px;border:1px solid #d8c4a5;padding:13px}
+.order-card label{font-size:12px;color:#70451e}
+.total{background:#fff0d1;padding:13px 15px;border-radius:10px;color:#8b4b0a}
+.info{background:linear-gradient(145deg,#2d2117,#1d1711);border:1px solid #624222;border-radius:18px;padding:27px;transition:.2s}
+.info:hover{transform:translateY(-5px);border-color:#ffc247}
+.info .symbol{background:#ffc247;color:#2b1909;width:48px;height:48px;display:grid;place-items:center;border-radius:14px;font-size:25px}
+.info h3{font-size:22px;color:#fff}
+.info p{font-size:14px}
+.address{background:linear-gradient(110deg,#5a3015,#28190f);border:1px solid #b47a32;border-radius:20px;padding:34px}
+.address h3{font-size:30px;color:#fff}
+.address .btn{background:#ffc247;color:#261608;border:0}
+footer{background:#0e0c09;border-top:1px solid #4a321a;color:#b7a58d;padding:38px 22px}
+.footbrand{font-size:21px;color:#ffc247}
+#site{overflow:hidden}
+.whatsapp-float{position:fixed;right:19px;bottom:19px;z-index:10;background:#20c66b;color:#062b15;text-decoration:none;font-weight:900;padding:14px 18px;border-radius:999px;box-shadow:0 8px 28px #0009;display:flex;align-items:center;gap:8px}
+@media(max-width:760px){.hero{padding:35px 17px 42px;gap:20px}.hero-photo{height:255px;transform:none;border-radius:20px}.hero-copy{padding:8px 3px}.hero p{font-size:15px}h1{font-size:46px}.strip{padding:0}.strip-item{font-size:10px}.strip-item b{width:29px;height:29px}.menu-card{padding:25px}.menu-card h3{font-size:29px}.order-card{padding:22px}.section-head h2{font-size:34px}section.content{padding:55px 16px}.whatsapp-float{right:12px;bottom:12px;padding:12px 15px}}
+\n</style></head>
 <body><div class="topline"></div>
 <header><div class="head"><div class="brand"><div class="monogram">MJF</div><div class="brandname">MJF MARMITARIA<small>SABOR DE CASA</small></div></div><nav><a href="#cardapio">Cardápio</a><a href="#como-pedir">Como pedir</a><a href="#contato">Localização</a><button class="navbtn" onclick="showAdmin()">Área administrativa</button></nav></div></header>
 <div id="site">
@@ -60,7 +114,7 @@ footer{border-top:1px solid #35342e;padding:30px 22px;text-align:center;color:#9
 <button class="btn gold" onclick="sendOrder()">Enviar pedido pelo WhatsApp ↗</button></div></div></section>
 <section class="content"><div class="section-head"><div class="eyebrow">Praticidade para você</div><h2>Peça do seu jeito</h2><p>Escolha como prefere receber e como deseja pagar. O pedido é enviado para nosso atendimento no WhatsApp.</p></div><div class="info-grid"><div class="info"><div class="symbol">◷</div><h3>Horário de atendimento</h3><p>Todos os dias, das 11h às 14h.<br>Pedidos até 13h40.</p></div><div class="info"><div class="symbol">⌂</div><h3>Entrega ou retirada</h3><p>Escolha receber sua marmita no endereço informado ou retirar diretamente no nosso local.</p></div><div class="info"><div class="symbol">◇</div><h3>Formas de pagamento</h3><p>Você pode escolher Pix, dinheiro ou cartão ao preencher seu pedido.</p></div></div></section>
 <section class="content" id="contato"><div class="address"><div><div class="eyebrow">Venha nos encontrar</div><h3>MJF Marmitaria</h3><p>R. Grécia, 231 - Centro<br>Guaíra - PR, 85980-000</p></div><a class="btn gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR">Ver no mapa ↗</a></div></section>
-<footer><div class="footbrand">MJF MARMITARIA</div>Comida caseira feita com carinho • Guaíra - PR<br>Atendimento das 11h às 14h | Pedidos até 13h40</footer></div>
+<a class="whatsapp-float" href="https://wa.me/554491424621" target="_blank" rel="noopener">✆ Pedir no WhatsApp</a><footer><div class="footbrand">MJF MARMITARIA</div>Comida caseira feita com carinho • Guaíra - PR<br>Atendimento das 11h às 14h | Pedidos até 13h40</footer></div>
 <div id="admin" class="hidden"><div class="admin-wrap"><div class="eyebrow">Painel de gerenciamento</div><div class="admin-panel"><h2>Atualizar o cardápio</h2><label>Nome do prato do dia</label><input id="editDish"><label>Descrição do prato</label><textarea id="editDesc"></textarea><div class="formgrid"><div><label>Preço M (R$)</label><input id="editM" type="number" step=".01"></div><div><label>Preço G (R$)</label><input id="editG" type="number" step=".01"></div></div><button class="btn gold" style="margin-top:18px" onclick="saveMenu()">Salvar alterações</button><p class="admin-note">Atenção: por enquanto, as alterações ficam salvas somente neste navegador e aparelho. Para que os clientes vejam o cardápio atualizado em seus celulares, será necessário conectar um banco de dados compartilhado.</p></div><button class="btn" onclick="hideAdmin()">← Voltar ao site</button></div></div>
 <script>
 const defaults={dish:'Frango grelhado com arroz, feijão e salada',desc:'Uma refeição caseira, fresquinha e preparada diariamente.',m:23,g:25};
