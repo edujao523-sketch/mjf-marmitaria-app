@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111"><title>MJF Marmitaria</title>
+<style>
+:root{--gold:#d5ad55;--bg:#101010;--panel:#1b1b1b;--muted:#aaa;--line:#333}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f6f1e7;font:16px system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:24px 18px;text-align:center;background:linear-gradient(140deg,#090909,#242019);border-bottom:1px solid #725b2e}
+.logo{color:var(--gold);font-size:30px;font-weight:900;letter-spacing:3px}.sub{color:#c9c1b1;font-size:13px}
+nav{display:flex;gap:8px;max-width:720px;margin:16px auto;padding:0 14px}
+button,select,input,textarea{font:inherit}nav button,.btn{border:1px solid var(--gold);border-radius:10px;padding:11px 15px;background:#211d14;color:#f8e7bd;cursor:pointer}
+nav button{flex:1}nav button.active,.btn.primary{background:var(--gold);color:#17130b;font-weight:750}
+main{max-width:720px;margin:0 auto;padding:0 14px 40px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
+h2{font-size:19px;margin:0 0 12px;color:var(--gold)}h3{margin:0 0 8px}.muted{color:var(--muted);font-size:14px}
+.price{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:9px 0}
+label{display:block;margin:12px 0 5px;color:#e8d8b4;font-size:14px}
+input,select,textarea{width:100%;padding:12px;border-radius:9px;border:1px solid #49433a;background:#101010;color:#fff}
+textarea{min-height:70px;resize:vertical}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.total{font-size:22px;color:var(--gold);font-weight:800}.btn{width:100%;margin-top:12px}
+.hidden{display:none}.status{font-size:13px;color:var(--gold)}.order{border-top:1px solid var(--line);padding:12px 0}
+footer{text-align:center;color:#888;font-size:12px;padding:20px}
+</style></head>
+<body>
+<header><div class="logo">MJF MARMITARIA</div><div class="sub">Comida caseira feita com carinho</div></header>
+<nav><button id="clientTab" class="active" onclick="showTab('client')">Fazer pedido</button><button id="adminTab" onclick="showTab('admin')">Administrador</button></nav>
+<main>
+<section id="client">
+<div class="card"><h2>Cardápio de hoje</h2><h3 id="dishTitle">Frango grelhado com arroz, feijão e salada</h3><p id="dishDesc" class="muted">Uma refeição caseira, fresquinha e preparada diariamente.</p>
+<div class="price"><span>Marmita M</span><strong id="priceM">R$ 23,00</strong></div><div class="price"><span>Marmita G</span><strong id="priceG">R$ 25,00</strong></div></div>
+<div class="card"><h2>Monte seu pedido</h2>
+<label for="size">Tamanho</label><select id="size" onchange="calc()"><option value="M">M — R$ 23,00</option><option value="G">G — R$ 25,00</option></select>
+<label for="qty">Quantidade</label><input id="qty" type="number" min="1" value="1" oninput="calc()">
+<div class="total" id="total">Total: R$ 23,00</div>
+<label for="customer">Seu nome</label><input id="customer" placeholder="Nome completo">
+<label for="phone">Telefone</label><input id="phone" placeholder="(44) 99999-9999">
+<label for="type">Receber pedido como</label><select id="type" onchange="toggleAddress()"><option value="Entrega">Entrega</option><option value="Retirada">Retirada no local</option></select>
+<div id="addressBox"><label for="address">Endereço de entrega</label><input id="address" placeholder="Rua, número e bairro"></div>
+<label for="payment">Forma de pagamento</label><select id="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão</option></select>
+<label for="notes">Observações</label><textarea id="notes" placeholder="Alguma observação para o pedido?"></textarea>
+<button class="btn primary" onclick="sendOrder()">Enviar pedido pelo WhatsApp</button>
+<p class="muted">Atendimento: 11h às 14h • Pedidos até 13h40<br>Entrega ou retirada • Pix, dinheiro e cartão</p></div>
+<div class="card"><h2>Onde estamos</h2><p>R. Grécia, 231 - Centro, Guaíra - PR, 85980-000</p><p><a style="color:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR" target="_blank">Ver localização no mapa</a></p></div>
+</section>
+<section id="admin" class="hidden">
+<div class="card"><h2>Editar cardápio</h2><label>Prato do dia</label><input id="editDish"><label>Descrição</label><textarea id="editDesc"></textarea><div class="grid"><div><label>Preço M (R$)</label><input id="editM" type="number" step=".01"></div><div><label>Preço G (R$)</label><input id="editG" type="number" step=".01"></div></div><button class="btn primary" onclick="saveMenu()">Salvar cardápio neste aparelho</button><p class="muted">As alterações ficam salvas neste navegador. Para compartilhar o mesmo cardápio entre aparelhos, será necessário conectar um banco de dados.</p></div>
+<div class="card"><h2>Pedidos recebidos neste aparelho</h2><div id="orders"><p class="muted">Os pedidos enviados pelo WhatsApp não aparecem automaticamente aqui.</p></div></div>
+</section>
+</main><footer>MJF Marmitaria • Guaíra - PR</footer>
+<script>
+const defaults={dish:'Frango grelhado com arroz, feijão e salada',desc:'Uma refeição caseira, fresquinha e preparada diariamente.',m:23,g:25};
+let menu={...defaults};try{menu={...menu,...JSON.parse(localStorage.getItem('mjfMenu')||'{}')}}catch(e){}
+function money(v){return Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function render(){document.getElementById('dishTitle').textContent=menu.dish;document.getElementById('dishDesc').textContent=menu.desc;document.getElementById('priceM').textContent=money(menu.m);document.getElementById('priceG').textContent=money(menu.g);document.getElementById('editDish').value=menu.dish;document.getElementById('editDesc').value=menu.desc;document.getElementById('editM').value=menu.m;document.getElementById('editG').value=menu.g;document.getElementById('size').innerHTML='<option value="M">M — '+money(menu.m)+'</option><option value="G">G — '+money(menu.g)+'</option>';calc()}
+function calc(){let p=document.getElementById('size').value==='M'?menu.m:menu.g;let q=Math.max(1,parseInt(document.getElementById('qty').value)||1);document.getElementById('total').textContent='Total: '+money(p*q)}
+function showTab(t){document.getElementById('client').classList.toggle('hidden',t!=='client');document.getElementById('admin').classList.toggle('hidden',t!=='admin');document.getElementById('clientTab').classList.toggle('active',t==='client');document.getElementById('adminTab').classList.toggle('active',t==='admin')}
+function toggleAddress(){document.getElementById('addressBox').classList.toggle('hidden',document.getElementById('type').value!=='Entrega')}
+function saveMenu(){menu={dish:document.getElementById('editDish').value.trim()||defaults.dish,desc:document.getElementById('editDesc').value.trim(),m:Number(document.getElementById('editM').value)||23,g:Number(document.getElementById('editG').value)||25};localStorage.setItem('mjfMenu',JSON.stringify(menu));render();alert('Cardápio salvo neste aparelho.')}
+function sendOrder(){let name=document.getElementById('customer').value.trim(),phone=document.getElementById('phone').value.trim(),type=document.getElementById('type').value,address=document.getElementById('address').value.trim();if(!name||!phone||(type==='Entrega'&&!address)){alert('Preencha nome, telefone e endereço de entrega.');return}let size=document.getElementById('size').value,qty=Math.max(1,parseInt(document.getElementById('qty').value)||1),price=size==='M'?menu.m:menu.g;let msg='Olá! Quero fazer um pedido na MJF Marmitaria.%0A%0APrato: '+encodeURIComponent(menu.dish)+'%0ATamanho: '+size+'%0AQuantidade: '+qty+'%0ATotal: '+encodeURIComponent(money(price*qty))+'%0ANome: '+encodeURIComponent(name)+'%0ATelefone: '+encodeURIComponent(phone)+'%0ARecebimento: '+type+'%0A'+(type==='Entrega'?'Endereço: '+encodeURIComponent(address)+'%0A':'')+'Pagamento: '+encodeURIComponent(document.getElementById('payment').value)+'%0AObservações: '+encodeURIComponent(document.getElementById('notes').value);window.open('https://wa.me/554491424621?text='+msg,'_blank')}
+render();
+</script></body></html>
