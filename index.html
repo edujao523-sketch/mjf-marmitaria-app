@@ -2,60 +2,76 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111"><title>MJF Marmitaria</title>
+<meta name="theme-color" content="#10100e"><title>MJF Marmitaria | Sabor de comida caseira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#d5ad55;--bg:#101010;--panel:#1b1b1b;--muted:#aaa;--line:#333}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f6f1e7;font:16px system-ui,-apple-system,Segoe UI,sans-serif}
-header{padding:24px 18px;text-align:center;background:linear-gradient(140deg,#090909,#242019);border-bottom:1px solid #725b2e}
-.logo{color:var(--gold);font-size:30px;font-weight:900;letter-spacing:3px}.sub{color:#c9c1b1;font-size:13px}
-nav{display:flex;gap:8px;max-width:720px;margin:16px auto;padding:0 14px}
-button,select,input,textarea{font:inherit}nav button,.btn{border:1px solid var(--gold);border-radius:10px;padding:11px 15px;background:#211d14;color:#f8e7bd;cursor:pointer}
-nav button{flex:1}nav button.active,.btn.primary{background:var(--gold);color:#17130b;font-weight:750}
-main{max-width:720px;margin:0 auto;padding:0 14px 40px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
-h2{font-size:19px;margin:0 0 12px;color:var(--gold)}h3{margin:0 0 8px}.muted{color:var(--muted);font-size:14px}
-.price{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:9px 0}
-label{display:block;margin:12px 0 5px;color:#e8d8b4;font-size:14px}
-input,select,textarea{width:100%;padding:12px;border-radius:9px;border:1px solid #49433a;background:#101010;color:#fff}
-textarea{min-height:70px;resize:vertical}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.total{font-size:22px;color:var(--gold);font-weight:800}.btn{width:100%;margin-top:12px}
-.hidden{display:none}.status{font-size:13px;color:var(--gold)}.order{border-top:1px solid var(--line);padding:12px 0}
-footer{text-align:center;color:#888;font-size:12px;padding:20px}
+:root{--gold:#d6ad61;--gold2:#f0d49a;--ink:#11110f;--panel:#1b1b18;--muted:#aaa69c;--line:#35342e;--cream:#f5f0e6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font:15px 'DM Sans',sans-serif}a{color:inherit}
+.topline{height:4px;background:linear-gradient(90deg,#8b642c,var(--gold2),#8b642c)}
+header{position:sticky;top:0;z-index:5;background:#11110fee;backdrop-filter:blur(12px);border-bottom:1px solid #343127}
+.head{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:11px}.monogram{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:800 17px 'Playfair Display';letter-spacing:-1px}
+.brandname{font-weight:800;letter-spacing:2px}.brandname small{display:block;font-size:9px;letter-spacing:3px;color:var(--gold);font-weight:600;margin-top:2px}
+nav{display:flex;gap:22px;align-items:center}nav a{text-decoration:none;color:#d5d0c5;font-size:13px}nav a:hover{color:var(--gold2)}
+.navbtn,.btn{border:1px solid var(--gold);border-radius:8px;padding:11px 17px;background:transparent;color:var(--gold2);font:700 13px 'DM Sans';text-decoration:none;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px}
+.navbtn:hover,.btn:hover{background:var(--gold);color:#17140d}.btn.gold{background:var(--gold);color:#17140d}.btn.gold:hover{background:var(--gold2)}
+.hero{max-width:1120px;margin:auto;padding:64px 22px 55px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
+.eyebrow{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1,h2,h3,p{margin-top:0}h1{font:800 clamp(38px,5.4vw,64px)/1.08 'Playfair Display',serif;margin:17px 0;color:#fff}h1 span{color:var(--gold2);font-style:italic}
+.hero p{max-width:470px;color:#c1bbae;line-height:1.8;font-size:16px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-photo{height:390px;border-radius:18px;position:relative;overflow:hidden;border:1px solid #5a4828;background:linear-gradient(140deg,#302516,#111);box-shadow:0 24px 60px #0008}
+.hero-photo img{width:100%;height:100%;object-fit:cover;opacity:.82}.photo-tag{position:absolute;left:18px;bottom:18px;background:#14130fe8;border:1px solid #8d713e;padding:12px 16px;border-radius:9px;color:var(--gold2);font-size:12px;letter-spacing:1px}
+.strip{border-top:1px solid #373329;border-bottom:1px solid #373329;background:#171713}
+.strip-inner{max-width:1120px;margin:auto;padding:18px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.strip-item{display:flex;align-items:center;justify-content:center;gap:11px;color:#e8dfcd;font-weight:600;font-size:13px}.strip-item b{font-size:20px;color:var(--gold)}
+section.content{max-width:1120px;margin:auto;padding:66px 22px}
+.section-head{text-align:center;max-width:650px;margin:0 auto 30px}.section-head h2{font:700 clamp(28px,4vw,39px) 'Playfair Display';margin:10px 0}.section-head p{color:var(--muted);line-height:1.7}
+.menu-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.menu-card{background:linear-gradient(145deg,#22211c,#171714);border:1px solid #51452d;border-radius:16px;padding:26px}
+.menu-label{display:inline-block;background:#3a2d18;color:var(--gold2);padding:7px 10px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.menu-card h3{font:700 27px 'Playfair Display';margin:17px 0 8px}.menu-card p{color:#bdb7aa;line-height:1.7}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.pricebox{border:1px solid #484235;border-radius:10px;padding:15px}.pricebox span{display:block;color:#bdb5a5;font-size:12px}.pricebox strong{display:block;color:var(--gold2);font-size:25px;margin-top:5px}
+.menu-note{font-size:12px;color:#aaa69c}
+.order-card{background:#f2ede3;color:#211e17;border-radius:16px;padding:25px}.order-card h3{font:700 25px 'Playfair Display';margin-bottom:5px}.order-card .muted{color:#6f6a60}.order-card label{display:block;font-size:12px;font-weight:700;margin:12px 0 5px;color:#514a3e}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d3cbbb;border-radius:7px;background:#fffdf8;color:#211e17;font:14px 'DM Sans';outline:none}input:focus,select:focus,textarea:focus{border-color:#aa813d}textarea{min-height:70px;resize:vertical}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.total{font-size:22px;font-weight:800;color:#8a642b;margin:14px 0}.order-card .btn{width:100%;margin-top:14px;border:0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.info{background:#1b1b17;border:1px solid #34332c;border-radius:13px;padding:22px}.info .symbol{font-size:24px;color:var(--gold)}.info h3{font:700 19px 'Playfair Display';margin:12px 0 7px}.info p{font-size:13px;color:#b4aea2;line-height:1.7;margin:0}
+.address{background:linear-gradient(110deg,#272219,#171714);border:1px solid #51452d;border-radius:15px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.address h3{font:700 24px 'Playfair Display';margin:7px 0}.address p{color:#bbb3a5;margin:0;line-height:1.7}
+footer{border-top:1px solid #35342e;padding:30px 22px;text-align:center;color:#928d82;font-size:12px;line-height:1.9}.footbrand{color:var(--gold);font-weight:800;letter-spacing:3px;font-size:16px}
+.hidden{display:none!important}.admin-wrap{max-width:720px;margin:30px auto;padding:0 16px}.admin-panel{background:#1c1c18;border:1px solid #51452d;border-radius:14px;padding:24px;margin:15px 0}.admin-panel h2{font:700 24px 'Playfair Display';color:var(--gold2)}.admin-panel label{display:block;margin:12px 0 5px;color:#d7c9a9;font-size:12px}.admin-panel input,.admin-panel textarea{background:#10100e;border-color:#494438;color:white}.admin-panel .formgrid{grid-template-columns:1fr 1fr}.admin-note{font-size:12px;color:#aaa;line-height:1.6}.admin-link{display:block;text-align:center;margin:20px;color:#aaa;font-size:12px}
+@media(max-width:760px){.head{padding:12px 16px}nav{gap:12px}nav a:not(.navbtn){display:none}.hero{padding:42px 17px;grid-template-columns:1fr;gap:25px}.hero-photo{height:270px;grid-row:1}.hero-copy{grid-row:2}.strip-inner{padding:16px 10px;gap:7px}.strip-item{font-size:10px;flex-direction:column;text-align:center;gap:4px}.strip-item b{font-size:18px}section.content{padding:48px 16px}.menu-layout{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.address{align-items:flex-start;flex-direction:column}.brandname{font-size:13px}}
 </style></head>
-<body>
-<header><div class="logo">MJF MARMITARIA</div><div class="sub">Comida caseira feita com carinho</div></header>
-<nav><button id="clientTab" class="active" onclick="showTab('client')">Fazer pedido</button><button id="adminTab" onclick="showTab('admin')">Administrador</button></nav>
-<main>
-<section id="client">
-<div class="card"><h2>Cardápio de hoje</h2><h3 id="dishTitle">Frango grelhado com arroz, feijão e salada</h3><p id="dishDesc" class="muted">Uma refeição caseira, fresquinha e preparada diariamente.</p>
-<div class="price"><span>Marmita M</span><strong id="priceM">R$ 23,00</strong></div><div class="price"><span>Marmita G</span><strong id="priceG">R$ 25,00</strong></div></div>
-<div class="card"><h2>Monte seu pedido</h2>
-<label for="size">Tamanho</label><select id="size" onchange="calc()"><option value="M">M — R$ 23,00</option><option value="G">G — R$ 25,00</option></select>
-<label for="qty">Quantidade</label><input id="qty" type="number" min="1" value="1" oninput="calc()">
-<div class="total" id="total">Total: R$ 23,00</div>
-<label for="customer">Seu nome</label><input id="customer" placeholder="Nome completo">
-<label for="phone">Telefone</label><input id="phone" placeholder="(44) 99999-9999">
-<label for="type">Receber pedido como</label><select id="type" onchange="toggleAddress()"><option value="Entrega">Entrega</option><option value="Retirada">Retirada no local</option></select>
+<body><div class="topline"></div>
+<header><div class="head"><div class="brand"><div class="monogram">MJF</div><div class="brandname">MJF MARMITARIA<small>SABOR DE CASA</small></div></div><nav><a href="#cardapio">Cardápio</a><a href="#como-pedir">Como pedir</a><a href="#contato">Localização</a><button class="navbtn" onclick="showAdmin()">Área administrativa</button></nav></div></header>
+<div id="site">
+<div class="hero"><div class="hero-copy"><div class="eyebrow">Comida caseira • Guaíra - PR</div><h1>Seu dia merece<br><span>um sabor de casa.</span></h1><p>Uma pausa gostosa no seu dia, com aquele carinho de comida feita em casa. Confira o prato do dia e peça sua marmita de um jeito simples e rápido.</p><div class="hero-actions"><a class="btn gold" href="#cardapio">Ver cardápio de hoje <span>↓</span></a><a class="btn" href="#como-pedir">Como fazer meu pedido</a></div></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85" alt="Refeição colorida servida em prato"><div class="photo-tag">COMIDA CASEIRA, TODO DIA</div></div></div>
+<div class="strip"><div class="strip-inner"><div class="strip-item"><b>01</b><span>Escolha seu tamanho</span></div><div class="strip-item"><b>02</b><span>Faça seu pedido pelo WhatsApp</span></div><div class="strip-item"><b>03</b><span>Receba ou retire sua marmita</span></div></div></div>
+<section class="content" id="cardapio"><div class="section-head"><div class="eyebrow">Feito para sua fome</div><h2>O cardápio de hoje</h2><p>O prato é atualizado diariamente. Escolha o tamanho que combina com sua fome e faça seu pedido.</p></div>
+<div class="menu-layout"><div class="menu-card"><span class="menu-label">Prato do dia</span><h3 id="dishTitle">Frango grelhado com arroz, feijão e salada</h3><p id="dishDesc">Uma refeição caseira, fresquinha e preparada diariamente.</p><div class="prices"><div class="pricebox"><span>Marmita média</span><strong id="priceM">R$ 23,00</strong></div><div class="pricebox"><span>Marmita grande</span><strong id="priceG">R$ 25,00</strong></div></div><div class="menu-note">* Consulte a disponibilidade do prato pelo WhatsApp.</div></div>
+<div class="order-card" id="como-pedir"><h3>Faça seu pedido</h3><p class="muted">Preencha os dados e envie direto para nosso WhatsApp.</p>
+<label for="size">Tamanho da marmita</label><select id="size" onchange="calc()"><option value="M">Média — R$ 23,00</option><option value="G">Grande — R$ 25,00</option></select>
+<div class="formgrid"><div><label for="qty">Quantidade</label><input id="qty" type="number" min="1" value="1" oninput="calc()"></div><div><label for="payment">Pagamento</label><select id="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão</option></select></div></div><div class="total" id="total">Total: R$ 23,00</div>
+<label for="customer">Seu nome</label><input id="customer" placeholder="Como podemos te chamar?">
+<label for="phone">Telefone para contato</label><input id="phone" placeholder="(44) 99999-9999">
+<label for="type">Entrega ou retirada?</label><select id="type" onchange="toggleAddress()"><option value="Entrega">Quero receber em casa</option><option value="Retirada">Vou retirar no local</option></select>
 <div id="addressBox"><label for="address">Endereço de entrega</label><input id="address" placeholder="Rua, número e bairro"></div>
-<label for="payment">Forma de pagamento</label><select id="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão</option></select>
-<label for="notes">Observações</label><textarea id="notes" placeholder="Alguma observação para o pedido?"></textarea>
-<button class="btn primary" onclick="sendOrder()">Enviar pedido pelo WhatsApp</button>
-<p class="muted">Atendimento: 11h às 14h • Pedidos até 13h40<br>Entrega ou retirada • Pix, dinheiro e cartão</p></div>
-<div class="card"><h2>Onde estamos</h2><p>R. Grécia, 231 - Centro, Guaíra - PR, 85980-000</p><p><a style="color:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR" target="_blank">Ver localização no mapa</a></p></div>
-</section>
-<section id="admin" class="hidden">
-<div class="card"><h2>Editar cardápio</h2><label>Prato do dia</label><input id="editDish"><label>Descrição</label><textarea id="editDesc"></textarea><div class="grid"><div><label>Preço M (R$)</label><input id="editM" type="number" step=".01"></div><div><label>Preço G (R$)</label><input id="editG" type="number" step=".01"></div></div><button class="btn primary" onclick="saveMenu()">Salvar cardápio neste aparelho</button><p class="muted">As alterações ficam salvas neste navegador. Para compartilhar o mesmo cardápio entre aparelhos, será necessário conectar um banco de dados.</p></div>
-<div class="card"><h2>Pedidos recebidos neste aparelho</h2><div id="orders"><p class="muted">Os pedidos enviados pelo WhatsApp não aparecem automaticamente aqui.</p></div></div>
-</section>
-</main><footer>MJF Marmitaria • Guaíra - PR</footer>
+<label for="notes">Observações do pedido</label><textarea id="notes" placeholder="Alguma observação? (opcional)"></textarea>
+<button class="btn gold" onclick="sendOrder()">Enviar pedido pelo WhatsApp ↗</button></div></div></section>
+<section class="content"><div class="section-head"><div class="eyebrow">Praticidade para você</div><h2>Peça do seu jeito</h2><p>Escolha como prefere receber e como deseja pagar. O pedido é enviado para nosso atendimento no WhatsApp.</p></div><div class="info-grid"><div class="info"><div class="symbol">◷</div><h3>Horário de atendimento</h3><p>Todos os dias, das 11h às 14h.<br>Pedidos até 13h40.</p></div><div class="info"><div class="symbol">⌂</div><h3>Entrega ou retirada</h3><p>Escolha receber sua marmita no endereço informado ou retirar diretamente no nosso local.</p></div><div class="info"><div class="symbol">◇</div><h3>Formas de pagamento</h3><p>Você pode escolher Pix, dinheiro ou cartão ao preencher seu pedido.</p></div></div></section>
+<section class="content" id="contato"><div class="address"><div><div class="eyebrow">Venha nos encontrar</div><h3>MJF Marmitaria</h3><p>R. Grécia, 231 - Centro<br>Guaíra - PR, 85980-000</p></div><a class="btn gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR">Ver no mapa ↗</a></div></section>
+<footer><div class="footbrand">MJF MARMITARIA</div>Comida caseira feita com carinho • Guaíra - PR<br>Atendimento das 11h às 14h | Pedidos até 13h40</footer></div>
+<div id="admin" class="hidden"><div class="admin-wrap"><div class="eyebrow">Painel de gerenciamento</div><div class="admin-panel"><h2>Atualizar o cardápio</h2><label>Nome do prato do dia</label><input id="editDish"><label>Descrição do prato</label><textarea id="editDesc"></textarea><div class="formgrid"><div><label>Preço M (R$)</label><input id="editM" type="number" step=".01"></div><div><label>Preço G (R$)</label><input id="editG" type="number" step=".01"></div></div><button class="btn gold" style="margin-top:18px" onclick="saveMenu()">Salvar alterações</button><p class="admin-note">Atenção: por enquanto, as alterações ficam salvas somente neste navegador e aparelho. Para que os clientes vejam o cardápio atualizado em seus celulares, será necessário conectar um banco de dados compartilhado.</p></div><button class="btn" onclick="hideAdmin()">← Voltar ao site</button></div></div>
 <script>
 const defaults={dish:'Frango grelhado com arroz, feijão e salada',desc:'Uma refeição caseira, fresquinha e preparada diariamente.',m:23,g:25};
 let menu={...defaults};try{menu={...menu,...JSON.parse(localStorage.getItem('mjfMenu')||'{}')}}catch(e){}
 function money(v){return Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
-function render(){document.getElementById('dishTitle').textContent=menu.dish;document.getElementById('dishDesc').textContent=menu.desc;document.getElementById('priceM').textContent=money(menu.m);document.getElementById('priceG').textContent=money(menu.g);document.getElementById('editDish').value=menu.dish;document.getElementById('editDesc').value=menu.desc;document.getElementById('editM').value=menu.m;document.getElementById('editG').value=menu.g;document.getElementById('size').innerHTML='<option value="M">M — '+money(menu.m)+'</option><option value="G">G — '+money(menu.g)+'</option>';calc()}
+function render(){document.getElementById('dishTitle').textContent=menu.dish;document.getElementById('dishDesc').textContent=menu.desc;document.getElementById('priceM').textContent=money(menu.m);document.getElementById('priceG').textContent=money(menu.g);document.getElementById('editDish').value=menu.dish;document.getElementById('editDesc').value=menu.desc;document.getElementById('editM').value=menu.m;document.getElementById('editG').value=menu.g;document.getElementById('size').innerHTML='<option value="M">Média — '+money(menu.m)+'</option><option value="G">Grande — '+money(menu.g)+'</option>';calc()}
 function calc(){let p=document.getElementById('size').value==='M'?menu.m:menu.g;let q=Math.max(1,parseInt(document.getElementById('qty').value)||1);document.getElementById('total').textContent='Total: '+money(p*q)}
-function showTab(t){document.getElementById('client').classList.toggle('hidden',t!=='client');document.getElementById('admin').classList.toggle('hidden',t!=='admin');document.getElementById('clientTab').classList.toggle('active',t==='client');document.getElementById('adminTab').classList.toggle('active',t==='admin')}
 function toggleAddress(){document.getElementById('addressBox').classList.toggle('hidden',document.getElementById('type').value!=='Entrega')}
+function showAdmin(){document.getElementById('site').classList.add('hidden');document.getElementById('admin').classList.remove('hidden');window.scrollTo(0,0)}
+function hideAdmin(){document.getElementById('admin').classList.add('hidden');document.getElementById('site').classList.remove('hidden');window.scrollTo(0,0)}
 function saveMenu(){menu={dish:document.getElementById('editDish').value.trim()||defaults.dish,desc:document.getElementById('editDesc').value.trim(),m:Number(document.getElementById('editM').value)||23,g:Number(document.getElementById('editG').value)||25};localStorage.setItem('mjfMenu',JSON.stringify(menu));render();alert('Cardápio salvo neste aparelho.')}
-function sendOrder(){let name=document.getElementById('customer').value.trim(),phone=document.getElementById('phone').value.trim(),type=document.getElementById('type').value,address=document.getElementById('address').value.trim();if(!name||!phone||(type==='Entrega'&&!address)){alert('Preencha nome, telefone e endereço de entrega.');return}let size=document.getElementById('size').value,qty=Math.max(1,parseInt(document.getElementById('qty').value)||1),price=size==='M'?menu.m:menu.g;let msg='Olá! Quero fazer um pedido na MJF Marmitaria.%0A%0APrato: '+encodeURIComponent(menu.dish)+'%0ATamanho: '+size+'%0AQuantidade: '+qty+'%0ATotal: '+encodeURIComponent(money(price*qty))+'%0ANome: '+encodeURIComponent(name)+'%0ATelefone: '+encodeURIComponent(phone)+'%0ARecebimento: '+type+'%0A'+(type==='Entrega'?'Endereço: '+encodeURIComponent(address)+'%0A':'')+'Pagamento: '+encodeURIComponent(document.getElementById('payment').value)+'%0AObservações: '+encodeURIComponent(document.getElementById('notes').value);window.open('https://wa.me/554491424621?text='+msg,'_blank')}
+function sendOrder(){let name=document.getElementById('customer').value.trim(),phone=document.getElementById('phone').value.trim(),type=document.getElementById('type').value,address=document.getElementById('address').value.trim();if(!name||!phone||(type==='Entrega'&&!address)){alert('Preencha nome, telefone e endereço de entrega.');return}let size=document.getElementById('size').value,qty=Math.max(1,parseInt(document.getElementById('qty').value)||1),price=size==='M'?menu.m:menu.g;let lines=['Olá! Quero fazer um pedido na MJF Marmitaria.','','Prato: '+menu.dish,'Tamanho: '+size,'Quantidade: '+qty,'Total: '+money(price*qty),'Nome: '+name,'Telefone: '+phone,'Recebimento: '+type];if(type==='Entrega')lines.push('Endereço: '+address);lines.push('Pagamento: '+document.getElementById('payment').value,'Observações: '+(document.getElementById('notes').value||'Nenhuma'));window.open('https://wa.me/554491424621?text='+encodeURIComponent(lines.join('\n')),'_blank')}
 render();
 </script></body></html>
