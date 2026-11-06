@@ -191,6 +191,60 @@ body{background:radial-gradient(ellipse at 12% 0%,#57331f 0,transparent 34%),rad
 @media(max-width:650px){.hours-card{padding:11px 13px}.food img,.shop-card img{height:128px}.hero{background-position:58% center}}
 @media(prefers-reduced-motion:reduce){.hours-spark,.soda-hint>span:first-child,.hero-sticker{animation:none!important}}
 
+
+/* MJF: refined warm food-first interface */
+:root{--bg:#f7f0e6;--panel:#fffaf3;--gold:#b96837;--gold2:#e3ad70;--muted:#796657;--ink:#35251c}
+body{background:#f7f0e6;color:#35251c}
+.app{max-width:980px}
+.top{padding-top:17px}
+.brand{color:#35251c;letter-spacing:.8px}.brand small{color:#a56b47}
+.logo{background:#9e552f;color:#fff6ec;border:0;border-radius:13px 13px 13px 4px;box-shadow:0 4px 0 #6f3824;transform:none}
+.profile{background:#efe1cf;color:#70452e;border:1px solid #d6bea5;box-shadow:none}
+.hello small{background:#f0e3d2;border:1px solid #dfc7ad;color:#80563d}
+.hello h1{color:#35251c;letter-spacing:-1.8px}.hello h1 span{background:none;color:#b96837;-webkit-text-fill-color:#b96837}
+.hello p{color:#796657}
+.hours-card{background:#fffaf3;border:1px solid #e6d8c8;box-shadow:0 5px 16px #52351a0c;border-radius:17px}
+.hours-icon{background:#f2e2cf;border:0;color:#92552f}.hours-copy strong,.hours-copy small{color:#796657}.hours-copy b{color:#35251c}.hours-spark{color:#c17a49}
+.search{background:#fffaf3;border:1px solid #e5d7c7;box-shadow:0 4px 14px #52351a0a;border-radius:15px}
+.search input{color:#35251c}.search input::placeholder{color:#a69687}
+.cats{gap:9px}.cat{background:#fffaf3;border:1px solid #e2d2c0;color:#694a36;box-shadow:none;border-radius:13px;min-height:48px}
+.cat.active{background:#75452e;color:#fff8ef;border:1px solid #75452e;box-shadow:none}
+.soda-hint{background:#f1e9dc;border:1px solid #ded0bc;border-radius:14px;color:#654b37}.soda-hint small{color:#826e5b}.hint-spark{color:#b96837}
+.hero{min-height:220px;border:0;border-radius:20px;background:linear-gradient(90deg,#2b1b13f2 0%,#382316d9 50%,#38231635 100%),url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1400&q=90') center/cover;box-shadow:0 8px 24px #3c25171c}
+.hero h2{color:#fff7ed}.hero p{color:#f0dfcd}.hero .tag{background:#f1d5b1;color:#603b25;border:0;box-shadow:none}
+.hero-sticker{filter:drop-shadow(0 4px 5px #0004);animation:none}
+.vibe-strip{background:#fffaf3;border:1px solid #e4d5c4;color:#79543c;border-radius:14px}
+.section h2{color:#35251c}.eyebrow{color:#a35b34}.section button{color:#a45b35}
+.food,.shop-card{background:#fffaf3;border:1px solid #e6d8c8;border-radius:17px;box-shadow:0 5px 16px #52351a0c}
+.food img,.shop-card img{border:0;border-radius:12px}
+.food h3,.shop-card h3{color:#35251c}.food p,.shop-card p{color:#79695a}
+.prices span{background:#f4eadc;border:1px solid #e6d3bd;color:#684b35}.prices b{color:#a95630}
+.foodfoot,.shop-meta{color:#875439}
+.add,.shop-card button{background:#a95e36;color:#fff8ef;border:0;box-shadow:none;border-radius:11px}
+.features .feature,.feature{background:#fffaf3;border:1px solid #e6d8c8;box-shadow:none;color:#493326}
+.features .feature b{color:#493326}.features .feature small{color:#887463}
+.bottom{background:#fffaf3f5;border-top:1px solid #e4d6c7;box-shadow:0 -4px 18px #4a2e180d}
+.nav button{color:#917d6b}.nav .active{color:#a95e36}.nav button b{background:#a95e36;color:#fff;border:0}
+.btn{background:#a95e36;color:#fff8ef;border:0;border-radius:13px;box-shadow:0 4px 0 #754128;font-weight:900}
+.btn:active,.add:active,.shop-card button:active{transform:translateY(2px);box-shadow:0 2px 0 #754128}
+.overlay{background:#24170fb0;backdrop-filter:blur(5px)}
+.sheet{background:#fffaf3;color:#35251c;border:1px solid #e5d5c3;box-shadow:0 -8px 32px #24170f30}
+.sheet h2{color:#35251c}.muted{color:#806d5c}.detail-sheet{background:#fffaf3;border-color:#e2d1bd}
+.detail-topline{color:#a95e36}.detailimg{border:0;border-radius:16px}
+.detail-info{background:#f4eadc;border:1px solid #e4d2bd;box-shadow:none}.detail-info h2{color:#35251c}.detail-price-note{color:#a95e36}
+.field label{color:#6e503a}.field input,.field select,.field textarea{background:#fff;border:1px solid #ddcbb7;color:#35251c}
+.field input::placeholder,.field textarea::placeholder{color:#a69687}
+.choice{background:#fff;border:1px solid #ddcbb7;color:#654a36}.choice.sel{background:#a95e36;color:#fff8ef;border-color:#a95e36;box-shadow:none}
+.soda-note{color:#887463}.qty button{background:#f1e2cf;color:#75472d;border:1px solid #d9c2a8}
+.total{border-color:#e1d1bf;color:#35251c}.total strong{color:#a95e36}
+.close{background:#f3e8dc;color:#65452f;border:1px solid #e0cbb5}
+.cart-line{background:#fffaf3;border:1px solid #e5d6c6;color:#35251c;box-shadow:none}.cart-line small{color:#887463}
+.admin-item{background:#fffaf3;border:1px solid #e5d6c6}.admin-item b{color:#35251c}.admin-item small{color:#887463}
+.schedule-card{background:#fffaf3;border:1px solid #e5d6c6}.schedule-card strong{color:#a95e36}.schedule-card .status{color:#79543c}
+.admin-separator{border-color:#e1d1bf}.payment-hint{color:#a95e36}
+.hours-card,.soda-hint,.hero,.food,.shop-card,.feature,.cat,.btn{animation:none}
+@media(max-width:650px){.app{padding:0 14px}.hours-card{padding:11px 13px}.food img,.shop-card img{height:128px}.hero{min-height:205px}.hero>div:first-child{padding:19px;max-width:85%}.hero-sticker{right:3%;font-size:50px}}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">MJF</div><div>MJF MARMITARIA<small>SABOR DE CASA</small></div></div><button class="profile" onclick="openModal('admin')">☻</button></header>
 <section id="homePage" class="page active"><div class="hello"><small>👋 Opa! Que bom ter você aqui!</small><h1>Seu almoço<br><span>mais feliz!</span></h1><p>Comida caseira, fresquinha e feita com carinho.</p></div>
