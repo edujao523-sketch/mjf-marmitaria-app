@@ -47,13 +47,76 @@ body{background:radial-gradient(ellipse at 8% 12%,#55301e 0,transparent 28%),rad
 @keyframes logoBob{0%,100%{translate:0 0}50%{translate:0 -3px}}
 @media(max-width:650px){.hero:before{right:12px;top:12px;font-size:20px}.hero:after{right:12px;bottom:10px;font-size:48px;opacity:.9}.hero>div{max-width:82%}.vibe-strip{font-size:10px}.food:hover,.shop-card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* MJF premium delivery interface inspired by the supplied two-screen reference */
+:root{--bg:#100b08;--gold:#ff922e;--gold2:#ffc16b;--muted:#bfa58e;--orange-glow:#ff7a1a}
+body{background:radial-gradient(ellipse at 85% 0%,#6b3218 0,transparent 34%),radial-gradient(ellipse at 4% 35%,#321b12 0,transparent 31%),#100b08;color:#fff8f0}
+.app{max-width:1120px}
+.top{padding:24px 0 20px}
+.brand{letter-spacing:1.5px}.logo{background:linear-gradient(145deg,#ffd28a,#ff7a1e);box-shadow:0 8px 26px #ff7a1e44}
+.profile{background:#281a13;border:1px solid #754326;box-shadow:0 5px 18px #0005}
+.hello small{background:none;border:0;padding:0;color:#d7b99a;font-size:13px}
+.hello h1{font-size:clamp(38px,7vw,66px);line-height:1.02;letter-spacing:-3px;margin:13px 0}
+.hello h1 span{background:linear-gradient(90deg,#ffd08a,#ff8124);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hello p{font-size:13px;color:#c5a78c}
+.search{display:flex;align-items:center;background:#241812;border:1px solid #553521;border-radius:16px;padding:15px 18px;box-shadow:0 12px 28px #0003}
+.search input{font:inherit;font-size:12px}
+.cats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;overflow:visible;margin:22px 0 25px}
+.cat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:83px;padding:12px 6px;border-radius:19px;background:#211711;border:1px solid #4b3020;color:#d9c0a7;font-size:24px;box-shadow:0 8px 20px #0002}
+.cat span{font-size:10px;font-weight:800}
+.cat.active{background:linear-gradient(145deg,#ffbd66,#f47720);color:#291509;box-shadow:0 8px 24px #ff7b2638}
+.hero{min-height:235px;border-radius:25px;background:linear-gradient(90deg,#160d09f5 0%,#211108dc 46%,#21110835 100%),url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1400&q=90') center/cover;box-shadow:0 18px 45px #0007;position:relative}
+.hero>div:first-child{padding:28px;max-width:470px}
+.hero h2{font-size:clamp(27px,4vw,39px);letter-spacing:-1.2px;line-height:1.05}
+.hero p{max-width:330px;font-size:12px;color:#e1c7ad}
+.hero .tag{background:#ff9a39;color:#2a1609}
+.hero-sticker{position:absolute;right:8%;bottom:10%;font-size:clamp(54px,9vw,100px);filter:drop-shadow(0 10px 12px #0008);transform:rotate(-12deg);pointer-events:none}
+.vibe-strip{display:none}
+.section{margin:30px 0 15px}
+.section h2{font-size:23px;letter-spacing:-.7px}
+.eyebrow{font-size:9px;font-weight:900;letter-spacing:2px;color:#ffb35e}
+.food,.shop-card{background:linear-gradient(145deg,#302017,#1b120d);border:1px solid #68452d;border-radius:21px;padding:10px;box-shadow:0 12px 28px #0004}
+.food img,.shop-card img{height:185px;border-radius:15px;object-fit:cover}
+.food h3,.shop-card h3{font-size:15px}
+.food p,.shop-card p{color:#c7ae96}
+.prices span{background:#1a100b;border-color:#634027}
+.foodfoot,.shop-meta{color:#ffc16b}
+.add,.shop-card button{background:linear-gradient(145deg,#ffc16b,#f47720);color:#291509;box-shadow:0 5px 15px #ff812633}
+.features .feature{background:#211711;border:1px solid #543722;border-radius:17px}
+.bottom{background:#17100cf5;border-top:1px solid #59381f;backdrop-filter:blur(22px)}
+.nav button{font-size:10px;font-weight:800;color:#a99079}.nav .active{color:#ff9a39}
+.detail-sheet{padding:15px 20px 22px;background:linear-gradient(180deg,#2b1b12,#170f0b 68%);border-color:#704526}
+.detail-topline{display:flex;align-items:center;justify-content:space-between;color:#ffc16b;font-size:10px;font-weight:900;letter-spacing:2px;margin-bottom:12px}
+.detailimg{height:260px;object-fit:cover;border-radius:20px;border:1px solid #80512e;box-shadow:0 12px 28px #0006}
+.detail-info{position:relative;margin-top:-24px;padding:18px 16px 14px;background:#24170feF;border:1px solid #68442a;border-radius:19px;box-shadow:0 10px 25px #0005}
+.detail-badge{display:inline-block;background:#8e321e;color:#ffe0c5;border-radius:20px;padding:5px 9px;font-size:9px;font-weight:900;letter-spacing:.8px}
+.detail-info h2{font-size:22px;letter-spacing:-.6px}
+.detail-price-note{font-size:9px;font-weight:900;letter-spacing:1.5px;color:#ffb45d;margin-top:14px}
+.detail-sheet .field{margin:17px 0}
+.detail-sheet .field label{font-size:11px;letter-spacing:.3px;color:#e8c59f}
+.detail-sheet .choice{background:#2c1d14;border-color:#62432c;border-radius:13px}
+.detail-sheet .choice.sel{background:linear-gradient(135deg,#ffc16b,#f47720);color:#2a1609;border-color:#ffce83}
+.detail-sheet .qty button{background:#332015;border-color:#80502d}
+.detail-sheet .total{border-color:#63432c}
+.detail-sheet .total strong{color:#ffad50}
+.detail-sheet .wide{border-radius:14px;background:linear-gradient(100deg,#ffc16b,#ff8528);padding:16px;font-size:13px}
+@media(max-width:650px){
+ .app{padding:0 15px}.top{padding:20px 0 16px}
+ .cats{gap:8px;margin:19px 0 21px}.cat{min-height:74px;border-radius:17px;font-size:21px}.cat span{font-size:9px}
+ .hero{min-height:205px;background-position:58% center}.hero>div:first-child{padding:20px;max-width:82%}
+ .hero h2{font-size:26px}.hero-sticker{right:4%;bottom:8%;font-size:48px;opacity:.9}
+ .food img,.shop-card img{height:128px}.food{padding:8px}
+ .detailimg{height:220px}.detail-sheet{padding:14px}
+}
+@media(min-width:800px){.hello{max-width:700px}.hero{min-height:260px}.grid{gap:16px}}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">MJF</div><div>MJF MARMITARIA<small>SABOR DE CASA</small></div></div><button class="profile" onclick="openModal('admin')">☻</button></header>
 <section id="homePage" class="page active"><div class="hello"><small>Oi! Que bom ter você por aqui 👋</small><h1>Comida boa,<br><span>dia melhor.</span></h1><p>Seu almoço com gostinho de comida feita em casa.</p></div>
 <div class="search">⌕　<input id="search" placeholder="O que você está procurando?" oninput="filterFood()"></div>
-<div class="cats"><button class="cat active">🍱 Tudo</button><button class="cat" onclick="openDetail()">🍛 Marmitas</button><button class="cat" onclick="alert('Marque seu prato como favorito para encontrá-lo aqui.')">♥ Favoritos</button></div>
-<div class="hero"><div><span class="tag">FEITO HOJE, COM CARINHO</span><h2>Seu almoço merece esse sabor.</h2><p>Escolha sua marmita média ou grande e peça rapidinho pelo WhatsApp.</p><button class="btn" onclick="openDetail()">Ver prato do dia　↗</button></div></div>
-<div class="vibe-strip"><span>🥕</span> <strong>COMIDA DE VERDADE</strong> <span>🍅</span> feita com carinho <span>✨</span> sabor que abraça <span>🍱</span></div><div class="section"><h2>Cardápio de hoje</h2><button onclick="openDetail()">Ver detalhes　›</button></div>
+<div class="cats"><button class="cat active">🍱<span>Tudo</span></button><button class="cat" onclick="openDetail()">🍛<span>Marmitas</span></button><button class="cat" onclick="alert('Marque seu prato como favorito para encontrá-lo aqui.')">🥗<span>Leves</span></button><button class="cat" onclick="switchPage('shopPage')">🍗<span>Pratos</span></button><button class="cat" onclick="switchPage('cartPage')">🛍️<span>Pedidos</span></button></div>
+<div class="hero"><div><span class="tag">✦ DESTAQUE DO DIA</span><h2>Seu almoço merece um sabor especial.</h2><p>Comida fresquinha, preparada com carinho e pronta para deixar seu dia melhor.</p><button class="btn" onclick="openDetail()">Escolher minha marmita　↗</button></div><div class="hero-sticker">🍲</div></div>
+<div class="vibe-strip"><span>🥕</span> <strong>COMIDA DE VERDADE</strong> <span>🍅</span> feita com carinho <span>✨</span> sabor que abraça <span>🍱</span></div><div class="section"><div><small class="eyebrow">FEITO COM CARINHO</small><h2>Popular na MJF</h2></div><button onclick="switchPage('shopPage')">Ver cardápio　›</button></div>
 <div class="grid"><article class="food"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=85" alt="Comida caseira"><h3 id="dish">Marmita do dia</h3><p id="desc">Comida caseira, fresquinha e preparada com carinho.</p><div class="prices"><span>M <b id="pm">R$ 23</b></span><span>G <b id="pg">R$ 25</b></span></div><div class="foodfoot">A partir de R$ 23 <button class="add" onclick="openDetail()">+</button></div></article></div>
 <div class="section"><h2>Um pedido sem complicação</h2></div><div class="features"><div class="feature">◷　<b>11h às 14h</b><small>Pedidos até 13h40</small></div><div class="feature">⌂　<b>Entrega ou retirada</b><small>Você escolhe</small></div></div>
 <div class="feature" style="margin:20px 0 30px">⌖　<div><b>R. Grécia, 231 — Centro</b><small>Guaíra - PR, 85980-000</small></div><a style="margin-left:auto;color:var(--gold2)" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR" target="_blank">Mapa ↗</a></div></section>
@@ -62,7 +125,7 @@ body{background:radial-gradient(ellipse at 8% 12%,#55301e 0,transparent 28%),rad
 <section id="schedulePage" class="page"><div class="section"><h2>Agendar marmita</h2><span class="muted">Programe seu almoço</span></div><p class="muted">Escolha o prato e o horário. O app salva o agendamento neste aparelho e avisa quando chegar a hora, desde que o site esteja aberto ou seja aberto novamente.</p><div class="field"><label>Prato</label><select id="scheduleDish"></select></div><div class="row"><div class="field" style="flex:1"><label>Tamanho</label><select id="scheduleSize"><option value="M">Média</option><option value="G">Grande</option></select></div><div class="field" style="flex:1"><label>Quantidade</label><input id="scheduleQty" type="number" min="1" value="1"></div></div><div class="field"><label>Data e horário</label><input id="scheduleWhen" type="datetime-local"></div><div class="field"><label>Seu nome</label><input id="scheduleName" placeholder="Como podemos te chamar?"></div><div class="field"><label>Telefone</label><input id="schedulePhone" placeholder="(44) 99999-9999"></div><div class="field"><label>Recebimento</label><select id="scheduleReceive" onchange="document.getElementById('scheduleAddressBox').style.display=this.value==='Entrega'?'block':'none'"><option>Entrega</option><option>Retirada</option></select></div><div class="field" id="scheduleAddressBox"><label>Endereço de entrega</label><input id="scheduleAddress" placeholder="Rua, número e bairro"></div><div class="field"><label>Observações</label><textarea id="scheduleNotes" placeholder="Opcional"></textarea></div><button class="btn wide" onclick="saveScheduledOrder()">Salvar agendamento</button><div class="section"><h2>Meus agendamentos</h2></div><div id="scheduleList"></div><p class="note">O lembrete fica salvo somente neste aparelho e só dispara com o site aberto; ao abrir o site depois do horário, o agendamento aparece como pronto para confirmar. O envio automático do pedido e a cobrança automática exigem um servidor conectado à API do WhatsApp Business e a um provedor de pagamentos.</p></section>
 </main>
 <nav class="bottom"><div class="nav"><button class="active" data-page="homePage" onclick="switchPage('homePage',this)"><span>⌂</span>Início</button><button data-page="shopPage" onclick="switchPage('shopPage',this)"><span>▦</span>Comprar</button><button data-page="cartPage" onclick="switchPage('cartPage',this)"><span>🛒</span>Carrinho <b id="cartCount">0</b></button><button data-page="schedulePage" onclick="switchPage('schedulePage',this)"><span>◷</span>Agendar</button><button onclick="openModal('admin')"><span>♙</span>Admin</button></div></nav>
-<div class="overlay" id="detail"><div class="sheet"><div class="sheethead"><h2>Detalhes do prato</h2><button class="close" onclick="closeModal('detail')">×</button></div><img class="detailimg" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85" alt="Prato de comida"><h2 id="dname" style="margin:14px 0 5px">Marmita do dia</h2><p class="muted" id="ddesc">Comida caseira, fresquinha e preparada com carinho.</p><div class="field"><label>Escolha o tamanho</label><div class="row"><button class="choice sel" id="m" onclick="size='M';update()">Média · R$ 23</button><button class="choice" id="g" onclick="size='G';update()">Grande · R$ 25</button></div></div><div class="field"><label>Quantidade</label><div class="qty"><button onclick="qty=Math.max(1,qty-1);update()">−</button><b id="q">1</b><button onclick="qty++;update()">+</button></div></div><div class="total">Total <strong id="t">R$ 23,00</strong></div><button class="btn wide" onclick="openModal('checkout')">Continuar com pedido →</button></div></div>
+<div class="overlay" id="detail"><div class="sheet detail-sheet"><div class="detail-topline"><span>DETALHES DO PRATO</span><button class="close" onclick="closeModal('detail')">×</button></div><img class="detailimg" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85" alt="Prato de comida"><div class="detail-info"><span class="detail-badge">✦ DESTAQUE DA CASA</span><h2 id="dname" style="margin:12px 0 5px">Marmita do dia</h2><p class="muted" id="ddesc">Comida caseira, fresquinha e preparada com carinho.</p><div class="detail-price-note">ESCOLHA COMO PREFERE</div></div><div class="field"><label>Personalize seu pedido · Tamanho</label><div class="row"><button class="choice sel" id="m" onclick="size='M';update()">Média · R$ 23</button><button class="choice" id="g" onclick="size='G';update()">Grande · R$ 25</button></div></div><div class="field"><label>Quantidade</label><div class="qty"><button onclick="qty=Math.max(1,qty-1);update()">−</button><b id="q">1</b><button onclick="qty++;update()">+</button></div></div><div class="total">Total <strong id="t">R$ 23,00</strong></div><button class="btn wide" onclick="openModal('checkout')">Continuar com pedido →</button></div></div>
 <div class="overlay" id="checkout"><div class="sheet"><div class="sheethead"><h2>Finalizar pedido</h2><button class="close" onclick="closeModal('checkout')">×</button></div><p class="muted">Preencha seus dados para enviar o pedido pelo WhatsApp.</p><div class="field"><label>Seu nome</label><input id="name" placeholder="Como podemos te chamar?"></div><div class="field"><label>Forma de pagamento</label><select id="pay" onchange="updatePaymentFlow()"><option>Pix</option><option>Dinheiro</option><option>Cartão</option></select></div><div class="field" id="proofBox" style="display:none"><label><strong>Adicionar comprovante</strong></label><input id="paymentProof" type="file" accept="image/*" capture="environment"><small class="muted">Envie a foto do comprovante Pix depois de pagar.</small></div><div class="field"><label>Como deseja receber?</label><div class="row"><button class="choice sel" id="del" onclick="receive='Entrega';document.getElementById('addrbox').style.display='block';del.classList.add('sel');pick.classList.remove('sel')">🚗 Entrega</button><button class="choice" id="pick" onclick="receive='Retirada';document.getElementById('addrbox').style.display='none';pick.classList.add('sel');del.classList.remove('sel')">🏠 Retirada</button></div></div><div class="field" id="addrbox"><label>Endereço</label><input id="address" placeholder="Rua, número e bairro"></div><div class="field"><label>Observações</label><textarea id="notes" placeholder="Alguma observação? (opcional)"></textarea></div><div class="total">Total <strong id="ct">R$ 23,00</strong></div><button class="btn wide" id="checkoutAction" onclick="window.finalizeMJFOrder(event)">Realizar pagamento →</button></div></div>
 <div class="overlay" id="admin"><div class="sheet"><div class="sheethead"><h2>Área administrativa</h2><button class="close" onclick="closeModal('admin')">×</button></div><p class="muted">O prato principal é carregado automaticamente. Altere nome, descrição, preços e foto neste formulário e toque em Salvar alterações. Para editar outro prato, use Editar na lista abaixo.</p>
 <div class="field"><label>Nome do prato</label><input id="newDish" placeholder="Ex.: Frango grelhado"></div>
