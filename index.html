@@ -20,13 +20,40 @@ body{background:radial-gradient(ellipse at 90% 0%,#71380f 0,transparent 34%),rad
 .features .feature b{font-size:15px}.features .feature small{font-size:12px}
 .admin-item .actions{display:flex;gap:6px}.admin-item .edit-btn{background:#624018;color:#ffda9a;border:1px solid #b17a35}
 #newPhoto{font-size:12px;padding:10px}
+
+/* MJF playful food theme */
+:root{--pop-coral:#ff6f61;--pop-mint:#a8e6cf;--pop-lilac:#cdb4ff;--pop-yellow:#ffe27a}
+body{background:radial-gradient(ellipse at 8% 12%,#55301e 0,transparent 28%),radial-gradient(ellipse at 92% 26%,#39244c 0,transparent 25%),#100d0b}
+.top{position:relative}.logo{border-radius:17px 17px 17px 5px;transform:rotate(-3deg);animation:logoBob 4s ease-in-out infinite}
+.profile{transition:transform .25s,background .25s}.profile:active{transform:rotate(-12deg) scale(.92)}
+.hello small{display:inline-flex;align-items:center;gap:6px;background:#ffb33e1c;border:1px solid #ffb33e55;border-radius:30px;padding:7px 11px;color:#ffe0aa}
+.hero{position:relative;isolation:isolate;border:1px solid #ffb33e88}
+.hero:before{content:"🍅  ✨";position:absolute;right:20px;top:15px;font-size:25px;letter-spacing:7px;opacity:.95;filter:drop-shadow(0 4px 8px #0008);animation:floatFood 3.8s ease-in-out infinite;pointer-events:none}
+.hero:after{content:"🍱";position:absolute;right:25px;bottom:17px;font-size:66px;filter:drop-shadow(0 8px 12px #0008);transform:rotate(9deg);animation:floatFood 4.6s ease-in-out infinite reverse;pointer-events:none}
+.hero>div{position:relative;z-index:1}.tag{background:var(--pop-yellow);box-shadow:0 4px 15px #ffb33e44;letter-spacing:.5px}
+.vibe-strip{display:flex;align-items:center;gap:9px;overflow:hidden;margin:-11px 0 23px;padding:11px 13px;border:1px dashed #ffb33e77;border-radius:15px;background:linear-gradient(100deg,#ffb33e18,#ff6f6118,#a8e6cf14);color:#f8dfbd;font-size:11px;font-weight:800;white-space:nowrap}
+.vibe-strip span{font-size:17px}.vibe-strip strong{color:#ffe0a0}
+.section h2{letter-spacing:-.5px}.section h2:after{content:" ✦";color:var(--pop-coral);font-size:14px}
+.food,.shop-card{position:relative;border-radius:22px;background:linear-gradient(145deg,#3a281d,#211711);border-color:#8a5b34;transition:transform .22s ease,box-shadow .22s ease}
+.food:hover,.shop-card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 35px #0006}
+.food img,.shop-card img{border-radius:16px;border:2px solid #ffffff12}
+.food h3,.shop-card h3{letter-spacing:-.3px}.foodfoot{gap:8px}.add{flex:0 0 36px;border:2px solid #ffe0a0;transition:transform .2s}.add:hover{transform:rotate(90deg) scale(1.06)}
+.features .feature{border-radius:18px;background:linear-gradient(135deg,#ffffff0d,#ffb33e0c);border-color:#8b603944}
+.bottom{border-radius:22px 22px 0 0;background:#17110df5}.nav button{transition:transform .2s,color .2s}.nav button:active{transform:translateY(-3px) scale(1.04)}
+.btn{transition:transform .2s,filter .2s}.btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.cat{border-radius:22px}.cat.active{background:linear-gradient(135deg,#ffe27a,#ff9d32 65%,#ff6f61)}
+.sheet{border-radius:26px 26px 17px 17px}.choice{border-radius:14px}.choice.sel{background:linear-gradient(135deg,#ffe27a,#ff9d32);border-color:#ffe0a0}
+@keyframes floatFood{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -9px;rotate:5deg}}
+@keyframes logoBob{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@media(max-width:650px){.hero:before{right:12px;top:12px;font-size:20px}.hero:after{right:12px;bottom:10px;font-size:48px;opacity:.9}.hero>div{max-width:82%}.vibe-strip{font-size:10px}.food:hover,.shop-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">MJF</div><div>MJF MARMITARIA<small>SABOR DE CASA</small></div></div><button class="profile" onclick="openModal('admin')">☻</button></header>
 <section id="homePage" class="page active"><div class="hello"><small>Oi! Que bom ter você por aqui 👋</small><h1>Comida boa,<br><span>dia melhor.</span></h1><p>Seu almoço com gostinho de comida feita em casa.</p></div>
 <div class="search">⌕　<input id="search" placeholder="O que você está procurando?" oninput="filterFood()"></div>
 <div class="cats"><button class="cat active">🍱 Tudo</button><button class="cat" onclick="openDetail()">🍛 Marmitas</button><button class="cat" onclick="alert('Marque seu prato como favorito para encontrá-lo aqui.')">♥ Favoritos</button></div>
 <div class="hero"><div><span class="tag">FEITO HOJE, COM CARINHO</span><h2>Seu almoço merece esse sabor.</h2><p>Escolha sua marmita média ou grande e peça rapidinho pelo WhatsApp.</p><button class="btn" onclick="openDetail()">Ver prato do dia　↗</button></div></div>
-<div class="section"><h2>Cardápio de hoje</h2><button onclick="openDetail()">Ver detalhes　›</button></div>
+<div class="vibe-strip"><span>🥕</span> <strong>COMIDA DE VERDADE</strong> <span>🍅</span> feita com carinho <span>✨</span> sabor que abraça <span>🍱</span></div><div class="section"><h2>Cardápio de hoje</h2><button onclick="openDetail()">Ver detalhes　›</button></div>
 <div class="grid"><article class="food"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=85" alt="Comida caseira"><h3 id="dish">Marmita do dia</h3><p id="desc">Comida caseira, fresquinha e preparada com carinho.</p><div class="prices"><span>M <b id="pm">R$ 23</b></span><span>G <b id="pg">R$ 25</b></span></div><div class="foodfoot">A partir de R$ 23 <button class="add" onclick="openDetail()">+</button></div></article></div>
 <div class="section"><h2>Um pedido sem complicação</h2></div><div class="features"><div class="feature">◷　<b>11h às 14h</b><small>Pedidos até 13h40</small></div><div class="feature">⌂　<b>Entrega ou retirada</b><small>Você escolhe</small></div></div>
 <div class="feature" style="margin:20px 0 30px">⌖　<div><b>R. Grécia, 231 — Centro</b><small>Guaíra - PR, 85980-000</small></div><a style="margin-left:auto;color:var(--gold2)" href="https://www.google.com/maps/search/?api=1&query=R.+Gr%C3%A9cia%2C+231%2C+Gua%C3%ADra+PR" target="_blank">Mapa ↗</a></div></section>
