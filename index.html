@@ -137,6 +137,60 @@ body{background:radial-gradient(circle at 8% 6%,#ffe18b 0,transparent 19%),radia
 @keyframes cardArrive{from{opacity:.65;transform:translateY(8px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes stickerPop{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-5px) rotate(4deg)}}
 @media(max-width:650px){.app{padding:0 14px}.hours-card{padding:11px 13px}.hours-copy b{font-size:18px}.cat{min-height:49px}.cat span{font-size:12px}.hero{min-height:205px}.hero>div:first-child{padding:19px;max-width:85%}.hero-sticker{right:3%;font-size:50px}.food img,.shop-card img{height:128px}.features .feature{font-size:13px;padding:12px}.soda-hint small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hours-spark,.soda-hint>span:first-child,.hero-sticker{animation:none!important}}
+
+/* MJF: dark caramel palette adapted to existing features */
+:root{--bg:#120d0a;--panel:#281a12;--gold:#d99a4b;--gold2:#f0bd75;--muted:#c4aa91;--ink:#fff5e9}
+body{background:radial-gradient(ellipse at 12% 0%,#57331f 0,transparent 34%),radial-gradient(ellipse at 92% 18%,#3b2418 0,transparent 30%),linear-gradient(160deg,#21140e,#100b08 72%);color:#fff5e9}
+.brand{color:#fff5e9}.brand small{color:#e4ad69}
+.logo{background:linear-gradient(145deg,#edbd78,#b87532);color:#2c190d;border:2px solid #8b5529;box-shadow:3px 4px 0 #080503;transform:rotate(-3deg)}
+.profile{background:#4a2d1b;color:#f4c887;border:1px solid #a06a38;box-shadow:0 5px 15px #0006}
+.hello small{background:#2a1b12;border:1px solid #8a5d35;color:#f1c68f;border-radius:30px;padding:7px 12px;font-weight:800}
+.hello h1{color:#fff5e9}.hello h1 span{background:linear-gradient(90deg,#f4c783,#d8893d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hello p{color:#d0b59b}
+.hours-card{background:linear-gradient(120deg,#3a2618,#24170f);border:1px solid #966335;box-shadow:0 8px 22px #0005}
+.hours-icon{background:#d99a4b;border:1px solid #b77b3b;color:#28170d}
+.hours-copy strong,.hours-copy small{color:#e2c5a5}.hours-copy b{color:#fff2dc}.hours-spark{color:#edb36d}
+.search{background:#26180f;border:1px solid #80552f;box-shadow:0 10px 24px #0004}
+.search input{color:#fff5e9}.search input::placeholder{color:#bca28a}
+.cats{gap:10px}.cat{background:#2b1c13;border:1px solid #80532f;color:#ead8c5;box-shadow:0 5px 12px #0003}
+.cat.active{background:linear-gradient(145deg,#e9b56e,#bd7734);color:#28170d;border:1px solid #f1c88c;box-shadow:0 6px 18px #0005}
+.soda-hint{background:#302317;border:1px dashed #9d7848;color:#f4dfc4}.soda-hint small{color:#d1b99e}.hint-spark{color:#e9b16c}
+.hero{border:1px solid #9b6738;background:linear-gradient(90deg,#160d09f5 0%,#211108dd 52%,#21110845 100%),url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1400&q=90') center/cover;box-shadow:0 16px 38px #0007}
+.hero h2{color:#fff3e2}.hero p{color:#eed8bf}.hero .tag{background:#d99a4b;color:#28170d;border:1px solid #f0c488}
+.hero-sticker{filter:drop-shadow(0 8px 10px #0009)}
+.vibe-strip{background:#2a1b12;border:1px dashed #9c6c3e;color:#edcfaa}
+.section h2{color:#fff2e2}.eyebrow{color:#e6ad68}.section button{color:#efbd7b}
+.food,.shop-card{background:linear-gradient(145deg,#352319,#20140e);border:1px solid #805632;box-shadow:0 10px 24px #0005}
+.food img,.shop-card img{border:1px solid #9a6a3d}
+.food h3,.shop-card h3{color:#fff0dc}.food p,.shop-card p{color:#cbb49b}
+.prices span{background:#21150e;border:1px solid #80552f;color:#f2dec5}.prices b{color:#efbd7b}
+.foodfoot,.shop-meta{color:#f0bd75}
+.add,.shop-card button{background:linear-gradient(145deg,#efbd75,#bd7836);color:#28170d;border:1px solid #f3ca91;box-shadow:0 5px 14px #0005}
+.features .feature,.feature{background:#2a1b12;border:1px solid #735032;box-shadow:0 7px 16px #0004;color:#fff0dc}
+.features .feature b{color:#fff0dc}.features .feature small{color:#c4aa91}
+.bottom{background:#17100cf5;border-top:1px solid #80532f;box-shadow:0 -6px 24px #0005}
+.nav button{color:#c2aa91}.nav .active{color:#f0b76b}.nav button b{background:#d99a4b;color:#28170d;border:1px solid #f1c88c}
+.btn{background:linear-gradient(135deg,#e9b56e,#bd7734);color:#28170d;border:1px solid #f3c98c;border-radius:15px;box-shadow:0 6px 16px #0005}
+.btn:active,.add:active,.shop-card button:active{transform:translateY(2px);box-shadow:0 2px 6px #0005}
+.overlay{background:#080503c9;backdrop-filter:blur(6px)}
+.sheet{background:linear-gradient(180deg,#302016,#1a100b 78%);color:#fff1df;border:1px solid #8b5d35;box-shadow:0 -10px 40px #0009}
+.sheet h2{color:#fff1df}.muted{color:#cfb69b}.detail-sheet{background:linear-gradient(180deg,#382519,#1b110b 78%);border-color:#9a693b}
+.detail-topline{color:#efbd75}.detailimg{border:1px solid #9b6b3d}
+.detail-info{background:#2a1a11;border:1px solid #80552f;box-shadow:0 8px 20px #0006}.detail-info h2{color:#fff0dc}.detail-price-note{color:#e7ad67}
+.field label{color:#e8bd88}.field input,.field select,.field textarea{background:#1b110c;border:1px solid #80552f;color:#fff2e2}
+.field input::placeholder,.field textarea::placeholder{color:#aa9077}
+.choice{background:#302015;border:1px solid #8a5d35;color:#f1dfc8}.choice.sel{background:linear-gradient(135deg,#e9b56e,#bd7734);color:#28170d;border-color:#f3ca91;box-shadow:0 4px 10px #0005}
+.soda-note{color:#c6ad92}.qty button{background:#382519;color:#f2c17a;border:1px solid #95653a}
+.total{border-color:#805832;color:#fff0dc}.total strong{color:#f0b76b}
+.close{background:#352217;color:#fff0dc;border:1px solid #95653a}
+.cart-line{background:#2a1b12;border:1px solid #805632;color:#fff0dc;box-shadow:0 6px 14px #0004}.cart-line small{color:#c8b095}
+.admin-item{background:#24170f;border:1px solid #735032}.admin-item b{color:#fff0dc}.admin-item small{color:#c5ad93}
+.schedule-card{background:#2a1b12;border:1px solid #805632}.schedule-card strong{color:#efbd75}.schedule-card .status{color:#edbd80}
+.admin-separator{border-color:#735032}
+.pix-qr{background:#fff}.payment-hint{color:#efbd75}
+@media(max-width:650px){.hours-card{padding:11px 13px}.food img,.shop-card img{height:128px}.hero{background-position:58% center}}
+@media(prefers-reduced-motion:reduce){.hours-spark,.soda-hint>span:first-child,.hero-sticker{animation:none!important}}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">MJF</div><div>MJF MARMITARIA<small>SABOR DE CASA</small></div></div><button class="profile" onclick="openModal('admin')">☻</button></header>
 <section id="homePage" class="page active"><div class="hello"><small>👋 Opa! Que bom ter você aqui!</small><h1>Seu almoço<br><span>mais feliz!</span></h1><p>Comida caseira, fresquinha e feita com carinho.</p></div>
